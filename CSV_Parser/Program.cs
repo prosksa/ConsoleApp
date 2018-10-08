@@ -15,7 +15,7 @@ namespace CSV_Parser
 
 		static void Main(string[] args)
 		{
-			string[] lines = File.ReadAllLines("task2.csv");
+			string[] lines = File.ReadAllLines("file.csv");
 			var sorted = lines.Select(line => new
 			{
 				SortKey = DateTime.Parse(line.Split(';')[1]),
