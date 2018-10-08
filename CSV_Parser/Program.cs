@@ -9,9 +9,9 @@ namespace CSV_Parser
 {
 	class Program
 	{
-		public static int[] maxSize = new int[31];
+		public static int[] maxSize;
 		public static DateTime max, min;
-		public static DateTime[,] period = new DateTime[31, 2];
+		public static DateTime[,] period;
 
 		static void Main(string[] args)
 		{
@@ -25,6 +25,8 @@ namespace CSV_Parser
 				  .Select(x => x.Line);
 
 			Values[] values = sorted.Select(v => Values.FromCsv(v)).ToArray();
+			maxSize = new int[sorted.Count()];
+			period = new DateTime[sorted.Count(), 2];
 
 			int c = 0;
 			int b = 1;
